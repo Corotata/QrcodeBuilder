@@ -15,21 +15,13 @@
 
 @interface UIImage (Coro_QrcodeBuilder)
 
-/**
- *  添加
- *
- *  @param text 需要加入二维码的字符串
- *  @param size 生成二维码的大小
- *
- *  @return 二维码
- */
 + (UIImage *)coro_createQRCodeWithText:(NSString *)text size:(CGFloat)size;
 
-+ (UIImage *)coro_createQRCodeWithText:(NSString *)text size:(CGFloat)size iconImage:(UIImage *)iconImage;
++ (UIImage *)coro_createQRCodeWithText:(NSString *)text size:(CGFloat)size centerImage:(UIImage *)centerImage;
 
 + (UIImage *)coro_createQRCodeWithText:(NSString *)text size:(CGFloat)size AndTransformColorWithRed:(CGFloat)red andGreen:(CGFloat)green andBlue:(CGFloat)blue;
 
-+ (UIImage *)coro_createQRCodeWithText:(NSString *)text size:(CGFloat)size iconImage:(UIImage *)iconImage AndTransformColorWithRed:(CGFloat)red andGreen:(CGFloat)green andBlue:(CGFloat)blue;
++ (UIImage *)coro_createQRCodeWithText:(NSString *)text size:(CGFloat)size centerImage:(UIImage *)centerImage AndTransformColorWithRed:(CGFloat)red andGreen:(CGFloat)green andBlue:(CGFloat)blue;
 
 
 @end

@@ -11,24 +11,24 @@
 @implementation UIImage (Coro_QrcodeBuilder)
 
 + (UIImage *)coro_createQRCodeWithText:(NSString *)text size:(CGFloat)size {
-    return [self coro_createQRCodeWithText:text size:size iconImage:nil];
+    return [self coro_createQRCodeWithText:text size:size centerImage:nil];
 }
 
-+ (UIImage *)coro_createQRCodeWithText:(NSString *)text size:(CGFloat)size iconImage:(UIImage *)iconImage {
-    return [self createNonInterpolatedUIImageFormCIImage:[self createQRForString:text] withSize:size WithCenterImage:iconImage];
++ (UIImage *)coro_createQRCodeWithText:(NSString *)text size:(CGFloat)size centerImage:(UIImage *)centerImage {
+    return [self createNonInterpolatedUIImageFormCIImage:[self createQRForString:text] withSize:size WithCenterImage:centerImage];
     
 }
 
 + (UIImage *)coro_createQRCodeWithText:(NSString *)text size:(CGFloat)size AndTransformColorWithRed:(CGFloat)red andGreen:(CGFloat)green andBlue:(CGFloat)blue {
-    return [self coro_createQRCodeWithText:text size:size iconImage:nil AndTransformColorWithRed:red andGreen:green andBlue:blue];
+    return [self coro_createQRCodeWithText:text size:size centerImage:nil AndTransformColorWithRed:red andGreen:green andBlue:blue];
 
 }
 
-+ (UIImage *)coro_createQRCodeWithText:(NSString *)text size:(CGFloat)size iconImage:(UIImage *)iconImage AndTransformColorWithRed:(CGFloat)red andGreen:(CGFloat)green andBlue:(CGFloat)blue{
++ (UIImage *)coro_createQRCodeWithText:(NSString *)text size:(CGFloat)size centerImage:(UIImage *)centerImage AndTransformColorWithRed:(CGFloat)red andGreen:(CGFloat)green andBlue:(CGFloat)blue{
     UIImage *buildImage = [self coro_createQRCodeWithText:text size:size];
     buildImage = [buildImage imageBlackToTransparentWithRed:red andGreen:green andBlue:blue];
-    if (iconImage) {
-        buildImage = [buildImage coro_drawCenterImage:iconImage];
+    if (centerImage) {
+        buildImage = [buildImage coro_drawCenterImage:centerImage];
     }
     return buildImage;
 }
