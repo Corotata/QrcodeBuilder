@@ -1,1 +1,1 @@
-pod trunk push ./CTPersistance.podspec --verbose --use-libraries --allow-warnings
+pod trunk push ./QrcodeBuilder.podspec --verbose --use-libraries --allow-warnings
