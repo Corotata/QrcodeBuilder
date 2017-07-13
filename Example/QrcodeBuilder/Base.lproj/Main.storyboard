@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16A313a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="vXZ-lx-hvc">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="ufC-wZ-h7g">
+            <objects>
+                <viewController id="vXZ-lx-hvc" customClass="CRViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
+                        <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="panda" translatesAutoresizingMaskIntoConstraints="NO" id="bKa-Qq-CfI">
+                                <rect key="frame" x="38" y="50" width="300" height="300"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="bKa-Qq-CfI" secondAttribute="height" multiplier="1:1" id="IVT-h1-Bib"/>
+                                </constraints>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="HqS-4l-CJ5">
+                                <rect key="frame" x="16" y="547" width="343" height="120"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wKD-or-C9n">
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="30"/>
+                                        <state key="normal" title="生成纯文本的二维码"/>
+                                        <connections>
+                                            <action selector="createTextQRCodeClick:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="hJi-fP-KCN"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iA5-yX-J4i">
+                                        <rect key="frame" x="0.0" y="30" width="343" height="30"/>
+                                        <state key="normal" title="生成带有中间小图的二维码"/>
+                                        <connections>
+                                            <action selector="createTextQRCodeWithImageClick:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="ywg-Uk-MOa"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NZo-Wm-KNQ">
+                                        <rect key="frame" x="0.0" y="60" width="343" height="30"/>
+                                        <state key="normal" title="生成纯文本自定义二维码颜色"/>
+                                        <connections>
+                                            <action selector="createTextQRCodeClickAndCustomColor:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="Cuw-Hj-Cyy"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="00h-m5-sm0">
+                                        <rect key="frame" x="0.0" y="90" width="343" height="30"/>
+                                        <state key="normal" title="生成带有中间小图自定义二维码颜色"/>
+                                        <connections>
+                                            <action selector="createTextQRCodeWithImageAndCustomColorClick:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="jG6-BN-FmI"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="00h-m5-sm0" secondAttribute="trailing" id="2fq-ts-Tqf"/>
+                                    <constraint firstItem="NZo-Wm-KNQ" firstAttribute="leading" secondItem="HqS-4l-CJ5" secondAttribute="leading" id="2np-HH-41g"/>
+                                    <constraint firstAttribute="trailing" secondItem="NZo-Wm-KNQ" secondAttribute="trailing" id="A7m-cY-bjW"/>
+                                    <constraint firstItem="wKD-or-C9n" firstAttribute="leading" secondItem="HqS-4l-CJ5" secondAttribute="leading" id="A9G-f9-RfH"/>
+                                    <constraint firstAttribute="trailing" secondItem="wKD-or-C9n" secondAttribute="trailing" id="AB2-aX-vXM"/>
+                                    <constraint firstItem="iA5-yX-J4i" firstAttribute="leading" secondItem="HqS-4l-CJ5" secondAttribute="leading" id="AR2-Bg-kDY"/>
+                                    <constraint firstAttribute="trailing" secondItem="iA5-yX-J4i" secondAttribute="trailing" id="reI-9x-MV4"/>
+                                    <constraint firstItem="00h-m5-sm0" firstAttribute="leading" secondItem="HqS-4l-CJ5" secondAttribute="leading" id="ygK-Ak-130"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="HqS-4l-CJ5" secondAttribute="trailing" id="8n2-EO-Nhm"/>
+                            <constraint firstItem="bKa-Qq-CfI" firstAttribute="centerY" secondItem="kh9-bI-dsS" secondAttribute="centerY" multiplier="0.6" id="Eun-nH-Mgx"/>
+                            <constraint firstItem="HqS-4l-CJ5" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="Hqn-x8-uaP"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="HqS-4l-CJ5" secondAttribute="bottom" id="Z5F-Lu-PV5"/>
+                            <constraint firstItem="bKa-Qq-CfI" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="tWb-YV-VDg"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="bKa-Qq-CfI" id="07l-Sr-vl7"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="32.799999999999997" y="38.23088455772114"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="panda" width="300" height="300"/>
+    </resources>
+</document>

@@ -1,0 +1,16 @@
+# 公有仓库
+source 'https://github.com/CocoaPods/Specs.git'
+## 私有仓库
+source 'http://git.2e-1.com:8000/iOS/LigoPrivatePods.git'
+
+use_frameworks!
+
+target 'QrcodeBuilder_Example' do
+  pod 'QrcodeBuilder', :path => '../'
+
+  target 'QrcodeBuilder_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end

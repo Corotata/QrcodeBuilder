@@ -1,0 +1,16 @@
+PODS:
+  - QrcodeBuilder (1.0.0)
+
+DEPENDENCIES:
+  - QrcodeBuilder (from `../`)
+
+EXTERNAL SOURCES:
+  QrcodeBuilder:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  QrcodeBuilder: be8b7626fdf5f843dd8af4ab3064cc1ac9ce2e78
+
+PODFILE CHECKSUM: f4e58009f57732adbb5afa30e9735723d6dcbf8a
+
+COCOAPODS: 1.2.0
