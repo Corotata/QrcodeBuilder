@@ -39,25 +39,15 @@
     UIImage *bilderImage = [self createNonInterpolatedUIImageFormCIImage:image withSize:size];
     if (!centerImage) {
         return bilderImage;
+    }else {
+        return [bilderImage coro_drawCenterImage:centerImage];
     }
-    UIGraphicsBeginImageContext(bilderImage.size);
-    
-    [bilderImage drawAtPoint:CGPointZero];
-    
-    CGFloat centerImageHW = size/3;
-    CGFloat centerImageXY = (size - centerImageHW)/2;
-    
-    [centerImage drawInRect:CGRectMake(centerImageXY, centerImageXY, centerImageHW, centerImageHW)];
-    bilderImage = UIGraphicsGetImageFromCurrentImageContext();
-    UIGraphicsEndImageContext();
-    return bilderImage;
 }
 
 - (UIImage *)coro_drawCenterImage:(UIImage *)centerImage {
     if (centerImage) {
         UIImage *buildImage = nil;
-
-        UIGraphicsBeginImageContext(self.size);
+        UIGraphicsBeginImageContextWithOptions(self.size, NO, [UIScreen mainScreen].scale);
         
         [self drawAtPoint:CGPointZero];
         
